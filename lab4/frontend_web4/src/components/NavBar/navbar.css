@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 1em;
+}
+ul li {
+  list-style: none;
+  padding-left: 1em;
+}
+ul li a {
+  padding: 1em;
+  color: #2E2F45;
+  text-decoration: none;
+  -webkit-transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  transition: background-color 0.5s, color 0.5s;
+}
+ul li a:hover {
+  background-color: rgba(238, 174, 202, 0.5);
+  color: white;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: transparent;
+  box-shadow: 0 0 10px #000;
+  color: #2E2F45;
+}
+.nav .slam-left {
+  margin-right: auto;
+}
+.nav .new_line {
+  white-space: pre;
+}
+
+/*# sourceMappingURL=navbar.css.map */

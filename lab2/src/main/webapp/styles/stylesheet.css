@@ -1,0 +1,117 @@
+.bio{
+    padding-left: 40px;
+    padding-right: 40px;
+    color: mediumpurple;
+    font-size: 30px;
+    text-align: center;
+}
+
+#lastbio{
+    padding-bottom: 40px;
+    padding-top: 5px;
+}
+#firstbio{
+    padding-top: 40px;
+    padding-bottom: 5px;
+}
+
+body {
+    background: -webkit-linear-gradient(45deg, pink 0%, wheat 33%, pink 66%, wheat 100%);
+    margin: 20px;
+    font-family: monospace;
+    width: 98%;
+    min-height: 800px;
+    font-size: 11px;
+    cursor: url("icons8-minecraft-pickaxe-30.png") 4 12, auto;
+}
+
+table{
+    width: 100%;
+}
+
+#result_table{
+    padding-top: 22px;
+}
+
+#data_table{
+    padding: 10px;
+}
+
+#col1, #col2{
+    width: 50%;
+    text-align: center;
+}
+
+fieldset{
+    border: solid 3px mediumpurple;
+}
+
+fieldset legend{
+    padding: 0 12px;
+}
+
+form td, form th, fieldset legend {
+    text-align: left;
+}
+
+form td{
+    width: 33%;
+}
+
+label > span{
+    padding-left: 6px;
+}
+
+svg{
+    stroke: #363636;
+    fill: #363636;
+    cursor: pointer;
+}
+
+input[type="submit"], button[type="clean_button"]{
+    background-color: lightgrey;
+    border-radius:6px;
+    color: black;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 6px 14px;
+    border: solid 1px mediumpurple;
+}
+
+button[type="clean_button"]{
+    width: 10%;
+}
+
+
+input[type="submit"]:hover, button[type="clean_button"]:hover{
+    background: mediumpurple;
+    box-shadow: 0 0 1px #777;
+}
+
+input[type=radio]{
+    cursor: pointer;
+}
+
+input[type=text], select[name = "values_R"] {
+    box-shadow:0 0 20px 5px rgba(0,0,0,0.06);
+    border-radius: 10px;
+    width: 110px;
+    cursor: pointer;
+}
+
+select[name = "values_R"] {
+    width: 114px;
+}
+
+.message{
+    color: magenta;
+}
+
+.results th {
+    width: 16%;
+    font-size: 13px;
+}
+
+
+
+

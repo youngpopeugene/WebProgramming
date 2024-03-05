@@ -1,0 +1,10 @@
+.header {
+    text-align: center;
+    font: 5vw monospace;
+    width: 98%;
+    left: 1%;
+    height: auto;
+    padding-top: 40px;
+    position: relative;
+    transition: 500ms;
+}

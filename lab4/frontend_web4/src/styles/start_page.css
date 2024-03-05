@@ -1,0 +1,116 @@
+#login-table{
+    padding: 10px 80px;
+}
+
+#login-fieldset{
+    width: fit-content;
+    margin: auto;
+    margin-top: 90px;
+}
+
+#login-form{
+    width: 450px;
+    height: 260px;
+}
+
+#login, #password{
+    width: 180px;
+    height: 20px;
+    font-size: 13px;
+    border: 1px solid #2E2F45;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 530px) {
+    #login-fieldset{
+        margin-top: 60px;
+    }
+    #login-form{
+        width: 350px;
+        height: 350px;
+    }
+    #div-auth{
+        font-size: 15px;
+    }
+
+    #login, #password{
+        width: 280px;
+        height: 37px;
+        font-size: 22px;
+        border: 1px solid #2E2F45;
+        border-radius: 5px;
+    }
+
+    #login-table{
+        padding: 0px 0;
+        padding-left: 30px;
+        font-size: 22px;
+    }
+
+    .change_button, .auth_button{
+        width: 280px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .auth_button{
+        margin-top: 20px;
+    }
+
+    #login-fieldset{
+        font-size: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 400px) {
+    #login-fieldset{
+        margin-top: 40px;
+    }
+    #login-form{
+        width: 250px;
+        height: 280px;
+    }
+    #div-auth{
+        font-size: 15px;
+    }
+
+    #login, #password{
+        width: 200px;
+        height: 27px;
+        font-size: 19px;
+        border: 1px solid #2E2F45;
+        border-radius: 5px;
+    }
+
+    #login-table{
+        padding: 0px 0;
+        padding-left: 20px;
+        font-size: 19px;
+    }
+
+    .change_button, .auth_button{
+        width: 200px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .auth_button{
+        margin-top: 20px;
+    }
+
+    #login-fieldset{
+        font-size: 18px;
+    }
+
+}
+
+fieldset legend{
+    padding-top: 30px;
+}
+
+.login_error {
+    color:red;
+    height: 26px;
+}
+

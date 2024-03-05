@@ -1,0 +1,121 @@
+#table-up, #table-down{
+    width:100%;
+}
+
+#table-down
+{
+    min-width: 500px;
+    overflow: scroll;
+}
+
+#table-up{
+    padding-top: 100px;
+}
+
+#fieldset-data{
+    width: fit-content;
+    margin: auto;
+}
+
+#form-data{
+    width: 300px;
+    height: 300px;
+}
+
+#table-data{
+    padding-left: 35px;
+    padding-top: 30px;
+}
+
+#div-svg{
+    text-align: center;
+    margin: auto;
+}
+
+#td-logout, #td-clean{
+    text-align: center;
+}
+
+.th-results{
+    width:16.5%;
+}
+
+#y_error, #x_error, #r_error{
+    color:red;
+    height: 18px;
+}
+
+.true {
+    color: green;
+}
+
+.false {
+    color: red;
+}
+
+.head {
+    color: black;
+}
+
+button{
+    background: #2E2F45;
+    color: white;
+    cursor: pointer;
+    mix-blend-mode: multiply;
+    padding: 6px 14px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: solid 2px transparent;
+}
+
+button:hover{
+    background: transparent;
+    color: #2E2F45;
+    border: solid 2px #2E2F45;
+}
+
+#logout-btn, #clean-btn{
+    width: 150px;
+}
+
+fieldset{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #000;
+}
+
+#fieldset-svg{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+#table-down{
+    padding-top: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+#r_values{
+    width: 100px;
+    -webkit-appearance: menulist-button;
+    height: 25px;
+    font-size: 12px;
+}
+#Y{
+    width: 98px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 12px;
+}
+#x_values{
+    width: 100px;
+    -webkit-appearance: menulist-button;
+    height: 25px;
+    font-size: 12px;
+}

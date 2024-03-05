@@ -1,0 +1,85 @@
+.bio{
+    color: #2E2F45;
+    font-size: 30px;
+    text-align: center;
+    padding: 5px 40px;
+}
+
+#firstbio{
+    padding-top: 15%;
+}
+
+body {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    font-family: monospace;
+    font-size: 14px;
+    min-height: 830px;
+    color: #2E2F45;
+}
+
+table{
+    width: 100%;
+}
+
+input[type="button"], input[type="submit"]{
+    background: #2E2F45;
+    color: white;
+    cursor: pointer;
+    mix-blend-mode: multiply;
+    padding: 6px 14px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: solid 2px transparent;
+}
+input[type="button"]:hover, input[type="submit"]:hover{
+    background: transparent;
+    color: #2E2F45;
+    border: solid 2px #2E2F45;
+}
+
+input[type="button"].Xbutton{
+    width: 40px;
+    border-radius: 20px;
+}
+
+#data_table{
+    padding: 10px;
+}
+
+.col{
+    width: 50%;
+    text-align: center;
+}
+
+fieldset{
+    border: solid 2px #2E2F45;
+}
+
+fieldset legend{
+    padding: 0 12px;
+}
+
+form td, form th, fieldset legend {
+    text-align: left;
+}
+
+form td{
+    width: 33%;
+}
+
+svg{
+    stroke: #2E2F45;
+    fill: #2E2F45;
+    cursor: pointer;
+}
+
+input[type=text]{
+    cursor: pointer;
+}
+
+
+
+
+
+

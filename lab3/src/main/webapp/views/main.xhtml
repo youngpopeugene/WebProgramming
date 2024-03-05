@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+    <title>Main page</title>
+    <h:outputStylesheet library="styles" name="main.css"/>
+    <p:remoteCommand immediate="true" name="setTimezone" action="${shotBean.setTimezone()}"/>
+    <h:outputScript>
+        window.onload = function(){
+            setTimezone([{name: 'timezone', value: (new Date()).getTimezoneOffset()}]);
+            console.log((new Date()).getTimezoneOffset());
+        }
+    </h:outputScript>
+</h:head>
+
+<h:body>
+    <table id="main_table">
+        <thead>
+            <tr>
+                <th class="bio" colspan="2" style="padding-top: 5px; padding-bottom: 10px" >Main page</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="col">
+                <fieldset>
+                    <legend><b>Enter data:</b></legend>
+                    <h:form class="input_form" id="form">
+                        <table id="data_table">
+                            <tr>
+                                <td colspan="3">
+                                    <h:outputLabel for="value_X" value="X value:"/>
+                                    <h:outputText id="value_X" style=" margin-left: 5px;" value="#{shotBean.shot.x} "/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><h:commandButton value="-3" type="button" styleClass="Xbutton"><f:ajax render="value_X" listener="#{shotBean.shot.setX(-3)}"/></h:commandButton></td>
+                                <td><h:commandButton value="-2" type="button" styleClass="Xbutton"><f:ajax render="value_X" listener="#{shotBean.shot.setX(-2)}"/></h:commandButton></td>
+                                <td><h:commandButton value="-1" type="button" styleClass="Xbutton"><f:ajax render="value_X" listener="#{shotBean.shot.setX(-1)}"/></h:commandButton></td>
+                            </tr>
+                            <tr>
+                                <td><h:commandButton value="0" type="button" styleClass="Xbutton"><f:ajax render="value_X" listener="#{shotBean.shot.setX(0)}"/></h:commandButton></td>
+                                <td><h:commandButton value="1" type="button" styleClass="Xbutton"><f:ajax render="value_X" listener="#{shotBean.shot.setX(1)}"/></h:commandButton></td>
+                                <td><h:commandButton value="2" type="button" styleClass="Xbutton"><f:ajax render="value_X" listener="#{shotBean.shot.setX(2)}"/></h:commandButton></td>
+                            </tr>
+                            <tr>
+                                <td><h:commandButton value="3" type="button" styleClass="Xbutton"><f:ajax render="value_X" listener="#{shotBean.shot.setX(3)}"/></h:commandButton></td>
+                                <td><h:commandButton value="4" type="button" styleClass="Xbutton"><f:ajax render="value_X" listener="#{shotBean.shot.setX(4)}"/></h:commandButton></td>
+                                <td><h:commandButton value="5" type="button" styleClass="Xbutton"><f:ajax render="value_X" listener="#{shotBean.shot.setX(5)}"/></h:commandButton></td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <h:outputLabel for="value_Y" value="Y value [-3, 5]:"/>
+                                    <p:inputNumber id="value_Y"
+                                                   value="#{shotBean.shot.y}"
+                                                   style="margin-left: 5px; width: 100px; margin-top: 12px"
+                                                   decimalPlaces="2"
+                                                   maxValue="5"
+                                                   minValue="-3">
+                                    </p:inputNumber>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <h:outputLabel for="value_R" value="R value [1, 3]:"/>
+                                    <p:inputNumber id="value_R"
+                                                   value="#{shotBean.shot.r}"
+                                                   style="margin-left: 12px; width: 102px; margin-top: 7px"
+                                                   decimalPlaces="1"
+                                                   maxValue="3"
+                                                   minValue="1"
+                                                   onchange="changingPlot()">
+                                    </p:inputNumber>
+                                    <p:slider for="value_R" minValue="1" maxValue="3" step="0.5" style="width: 240px; margin-top: 7px"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <h:commandButton type="submit"
+                                                     value="Submit"
+                                                     id="form_button_submit">
+                                        <p:ajax process="@form"
+                                                listener="${shotBean.add()}"
+                                                update="results, panelGridPlot, value_X"
+                                                onerror="checkR()"/>
+                                    </h:commandButton>
+                                </td>
+                            </tr>
+                        </table>
+                    </h:form>
+                </fieldset>
+            </td>
+            <td class="col">
+                <h:panelGrid id="panelGridPlot">
+                    <ui:include src="plot.xhtml"/>
+                </h:panelGrid>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1" style="text-align: right; padding:10px 0">
+                <h:button outcome="to_index" value="Go to the start page" style="width: 160px"/>
+            </td>
+            <td colspan="1" style="text-align: left; padding:10px 0;">
+                <h:commandButton type="button" value="Clean results" style="width: 160px">
+                    <p:ajax listener="#{shotBean.clear()}" update="results, panelGridPlot"/>
+                </h:commandButton>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <h:panelGrid>
+        <p:dataTable id="results" var="shot" value="#{shotBean.shotsList}" tableStyle="text-align: center;">
+            <p:column styleClass="table-value" headerText="X" style="text-align: center">
+                <h:outputText id="table-valueX" value="#{shot.x}"/>
+            </p:column>
+
+            <p:column styleClass="table-value" headerText="Y" style="text-align: center">
+                <h:outputText id="table-valueY" value="#{shot.y}"/>
+            </p:column>
+
+            <p:column styleClass="table-value" id="table-valueR" headerText="R" style="text-align: center">
+                <h:outputText value="#{shot.r}"/>
+            </p:column>
+
+            <p:column styleClass="table-value" id="table-currentTime" headerText="Current time" style="text-align: center">
+                <h:outputText value="#{shot.currentTime}"/>
+            </p:column>
+
+            <p:column styleClass="table-value" id="table-scriptTime" headerText="Script time" style="text-align: center">
+                <h:outputText value="#{shot.scriptTime}"/>
+            </p:column>
+            <p:column styleClass="table-value" id="table-status" headerText="Status" style="text-align: center">
+                <h:outputText value="#{shot.status}" style="text-transform: uppercase"/>
+            </p:column>
+        </p:dataTable>
+    </h:panelGrid>
+</h:body>
+<h:outputScript library="scripts" name="main.js"/>
+<h:outputScript library="scripts" name="jquery-3.6.0.js"/>
+</html>

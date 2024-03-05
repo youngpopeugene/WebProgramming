@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Start Page</title>
+    <h:outputStylesheet library="styles" name="main.css"/>
+</h:head>
+
+<h:body>
+    <table id="main_table">
+        <thead>
+            <tr>
+                <th class="bio" id="firstbio" colspan="2" >Web programming lab work №3</th>
+            </tr>
+            <tr>
+                <th class="bio" colspan="2"><span id="clock">00:00:00</span></th>
+            </tr>
+            <tr>
+                <th class="bio" colspan="2" >Tuliakov Eugene</th>
+            </tr>
+            <tr>
+                <th class="bio" colspan="2" >Group: P32101</th>
+            </tr>
+            <tr>
+                <th class="bio" colspan="2" >Var: 7328</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+                    <h:button outcome="to_main" value="Go to the main page"></h:button>
+                </th>
+            </tr>
+
+        </tbody>
+    </table>
+</h:body>
+<h:outputScript library="scripts" name="clock.js"/>
+<h:outputScript library="scripts" name="jquery-3.6.0.js"/>
+</html>
